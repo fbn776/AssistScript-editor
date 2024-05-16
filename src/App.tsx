@@ -1,6 +1,6 @@
 import {Header} from "./component/Header.tsx";
 import Editor from "./component/Editor.tsx";
-import "./App.css"
+import "./app.css"
 
 function App() {
     return (
