@@ -15,7 +15,7 @@ function Output({code}: { code: MutableRefObject<string> }) {
                 setOutputs(null);
 
             // Simulate a delay
-            // await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 800));
             window.dispatchEvent(runEndEvent);
         }
 
