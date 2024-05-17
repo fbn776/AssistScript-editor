@@ -36,3 +36,25 @@
         stroke-dashoffset: -125px;
     }
 }
+
+.hover-tip {
+    position: relative;
+}
+
+.hover-tip::before {
+    content: attr(data-tip);
+    position: absolute;
+    z-index: 9999;
+    bottom: -100%;
+    left: 0;
+    background: rgba(150, 150, 150, 0.4);
+    color: rgba(200, 200, 200, 0.8);
+    @apply px-2 py-1 text-xs rounded;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hover-tip:hover::before {
+    opacity: 1;
+}
