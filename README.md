@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# AssistScript Runner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An online [AssistScript](https://github.com/fbn776/AssistScript) code runner. 
 
-Currently, two official plugins are available:
+The runner is live at [asrc-online.vercel.app](https://asrc-online.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## More info
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To learn more about AssistScript, see;
+- [AssistScript NPM](https://www.npmjs.com/package/assistscript)
+- [AssistScript GitHub](https://github.com/fbn776/AssistScript)
+- [Language Documentation](https://github.com/fbn776/AssistScript/blob/master/docs/README.md)
+- [Language Reference](https://github.com/fbn776/AssistScript/blob/master/docs/references/README.md)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Tech Stack
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React + TypeScript + Vite
+- Tailwind CSS
+- [CodeMirror](https://www.npmjs.com/package/@uiw/react-codemirror)
+
+---
+
+Made with 💙 by [fbn776](https://febinnelson.me)
+
