@@ -12,25 +12,42 @@ export function Header() {
         const handleDisabled = () => {
             setDisabled(false);
         }
-
         window.addEventListener('run-end', handleDisabled);
 
-        return () => window.removeEventListener('run-end', handleDisabled);
+        const runCode = (e: KeyboardEvent) => {
+            const key = e.key;
+
+            if(key === 'F5' || (e.ctrlKey && key === 'R')) {
+                e.preventDefault();
+                setDisabled(true);
+                window.dispatchEvent(runEvent)
+            }
+        }
+
+        document.addEventListener("keydown", runCode);
+
+        return () => {
+            window.removeEventListener('run-end', handleDisabled);
+            document.removeEventListener("keydown", runCode);
+        };
     }, []);
 
     return <header className="w-full h-[60px] bg-[#313131] flex items-center gap-3 px-3 justify-between">
         <div className="flex items-center gap-3">
             <img src="/AS.png" alt="AssistScript logo" width="38px"
                  className="border-2 border-white border-opacity-10 rounded"/>
-            <h1 className="text-2xl">AssistScript Runner</h1>
+            <h1 className="text-2xl">
+                <span className="max-sm:hidden">AssistScript</span> Runner
+            </h1>
         </div>
         <button
-            className="flex items-center rounded border-2 px-2 py-1 border-run text-run hover:bg-run hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-run"
+            className="hover-tip flex items-center rounded border-2 px-2 py-1 border-run text-run hover:bg-run hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-run"
             onClick={() => {
                 setDisabled(true);
                 window.dispatchEvent(runEvent)
             }}
             disabled={disabled}
+            data-tip="F5"
         >
             Run
             {disabled ? <svg className="loader" viewBox="25 25 50 50">

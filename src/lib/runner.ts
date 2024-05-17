@@ -37,7 +37,6 @@ function runCode(str: string): { buffer: unknown[], isError: boolean } {
     let buffer = ctx.buffer;
     // Filter out any undefined, null or empty strings
     buffer = buffer.filter((v) => v !== undefined && v !== null && v !== '');
-    console.log(buffer, isError)
     return {buffer, isError};
 }
 
