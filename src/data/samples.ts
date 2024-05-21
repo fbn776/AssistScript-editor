@@ -6,7 +6,7 @@ interface I_Sample {
 const samples: I_Sample[] = [
     {
         name: "arrays.asrc",
-        src: "/samples/arrays12.asrc",
+        src: "/samples/arrays.asrc",
     }, {
         name: "binary-search.asrc",
         src: "/samples/binary-search.asrc",
