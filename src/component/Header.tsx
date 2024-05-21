@@ -1,10 +1,10 @@
 import {IconCode, IconHelp, IconPlayerPlay} from "@tabler/icons-react";
 import {useEffect, useRef, useState} from "react";
 import samples from "../data/samples.ts";
+import {Link} from "react-router-dom";
 
 /** A custom event to trigger the run event, this is dispatched when the run button is clicked */
 const runEvent = new Event('run');
-const openHelpEvent = new Event('open-help');
 
 export function Header() {
     const [disabled, setDisabled] = useState(false);
@@ -75,9 +75,9 @@ export function Header() {
                     }
                 </menu>
             </div>
-            <button className="hover-tip" data-tip="Help" onClick={() => window.dispatchEvent(openHelpEvent)}>
+            <Link to='/help' className="hover-tip" data-tip="Help">
                 <IconHelp size={30} className="stroke-[1.5px] hover:scale-110"/>
-            </button>
+            </Link>
             <button
                 className="hover-tip flex items-center rounded border-2 px-2 py-1 border-run text-run hover:bg-run hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-run"
                 onClick={() => {

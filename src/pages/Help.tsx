@@ -1,27 +1,13 @@
 import {IconBook, IconBrandGithub, IconBrandNpm, IconCode, IconX} from "@tabler/icons-react";
-import {useEffect, useRef} from "react";
+import {Link} from "react-router-dom";
 
 export default function Help() {
-    const elem = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        const openHelp = () => {
-            elem.current?.classList.toggle('hidden');
-        };
-
-        window.addEventListener('open-help', openHelp)
-
-        return () => {
-            window.removeEventListener('open-help', openHelp);
-        }
-    }, []);
-
-    return <section className="hidden fixed z-[9999999999] inset-0 bg-[#323232]" ref={elem}>
+    return <section className="fixed inset-0 bg-[#323232]">
         <div className="w-full h-[60px] bg-[#212121] flex justify-between px-4 items-center">
             <h1 className="text-2xl">AssistScript <span className="max-sm:hidden">Runner</span></h1>
-            <button onClick={() => elem.current?.classList.toggle('hidden')}>
+            <Link to='/'>
                 <IconX size={30} className="stroke-[2px] hover:scale-110 hover:text-red-500"/>
-            </button>
+            </Link>
         </div>
 
         <div className="p-4 text-gray-400 overflow-auto fixed top-[60px] bottom-0">
