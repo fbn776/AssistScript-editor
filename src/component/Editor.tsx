@@ -1,7 +1,10 @@
 import CodeMirror from "@uiw/react-codemirror";
-import {editorTheme} from "../lib/EditorTheme.ts";
 import Output from "./Output.tsx";
 import {useEffect, useRef, useState} from "react";
+import {StreamLanguage} from "@codemirror/language";
+import {assistscript} from '../lib/assistscript';
+import {editorTheme} from "../lib/EditorTheme.ts";
+
 
 
 function Editor({isMobile}: { isMobile: boolean }) {
@@ -55,6 +58,7 @@ function Editor({isMobile}: { isMobile: boolean }) {
                         onChange={(value) => {
                             codeValue.current = value;
                         }}
+                        extensions={[StreamLanguage.define(assistscript)]}
                         value={code}
             />
         </div>

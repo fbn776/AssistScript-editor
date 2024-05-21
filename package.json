@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/legacy-modes": "^6.4.0",
     "@tabler/icons-react": "^3.4.0",
+    "@uiw/codemirror-extensions-langs": "^4.22.1",
     "@uiw/codemirror-themes": "^4.22.1",
     "@uiw/react-codemirror": "^4.22.1",
     "assistscript": "^1.2.10",
