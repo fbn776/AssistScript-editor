@@ -4,6 +4,7 @@ import samples from "../data/samples.ts";
 
 /** A custom event to trigger the run event, this is dispatched when the run button is clicked */
 const runEvent = new Event('run');
+const openHelpEvent = new Event('open-help');
 
 export function Header() {
     const [disabled, setDisabled] = useState(false);
@@ -74,7 +75,7 @@ export function Header() {
                     }
                 </menu>
             </div>
-            <button className="hover-tip" data-tip="Help">
+            <button className="hover-tip" data-tip="Help" onClick={() => window.dispatchEvent(openHelpEvent)}>
                 <IconHelp size={30} className="stroke-[1.5px] hover:scale-110"/>
             </button>
             <button
