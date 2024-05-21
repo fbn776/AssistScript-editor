@@ -22,6 +22,7 @@ function Editor({isMobile}: { isMobile: boolean }) {
             }
 
             const data = await response.text();
+            codeValue.current = data;
             setCode(data);
             setLoading(false);
         }

@@ -50,7 +50,7 @@ export function Header() {
                 </button>
                 <menu
                     ref={menuRef}
-                    className="absolute overflow-y-auto overflow-x-hidden text-ellipsis w-[200px] divide-y-2 divide-white divide-opacity-10 h-fit max-h-[200px] top-[45px] left-[calc(50%-100px)] border-2 border-white border-opacity-10 rounded-md shadow-2xl z-[9999999999] bg-[#313131] "
+                    className="hidden absolute overflow-y-auto overflow-x-hidden text-ellipsis w-[200px] divide-y-2 divide-white divide-opacity-10 h-fit max-h-[200px] top-[45px] left-[calc(50%-100px)] border-2 border-white border-opacity-10 rounded-md shadow-2xl z-[9999999999] bg-[#313131] "
                 >
                     {
                         samples.map((sample, index) =>
