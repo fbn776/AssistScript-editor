@@ -45,7 +45,9 @@ function Output({code}: { code: MutableRefObject<string> }) {
         className="bg-[#313131] p-3 gap-1 rounded flex flex-col max-h-[calc(100%-60px)] min-h-[100%] max-w-[50%] max-sm:min-h-[50%] max-sm:h-[50%] max-sm:max-w-[100%] flex-1">
         <div className="flex justify-between">
             <h2 className="text-lg">Output</h2>
-            <IconEraser className="cursor-pointer hover:text-red-500" onClick={() => setOutputs(null)}/>
+            <button className="hover-tip" data-tip="Clear">
+                <IconEraser className="cursor-pointer hover:text-red-500" onClick={() => setOutputs(null)}/>
+            </button>
         </div>
         <div ref={outputCont}
              className="w-full flex-grow bg-[#1E1E1E] text-white p-3 rounded overflow-y-auto overflow-x-auto"

@@ -45,16 +45,22 @@
     content: attr(data-tip);
     position: absolute;
     z-index: 9999;
-    bottom: -100%;
-    left: 0;
+    bottom: -110%;
+    min-width: 70px;
+    left: calc(50% - 35px);
     background: rgba(150, 150, 150, 0.4);
     color: rgba(200, 200, 200, 0.8);
+    text-align: center;
     @apply px-2 py-1 text-xs rounded;
 
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-.hover-tip:hover::before {
+.hover-tip:hover::before , .hover-tip:active::before , .hover-tip:focus::before {
     opacity: 1;
+}
+
+.hover-tip:not(:hover)::before {
+    opacity: 0;
 }
